@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light</title>
+    <style>
+       
+        .traffic-light {
+            width: 100px;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        
+        .light {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 10px auto;
+            background-color: rgb(61, 61, 61);
+            transition: background-color 0.3s;
+        }
+
+       
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+      
+        .button {
+            display: inline-block;
+            width: 80px;
+            padding: 10px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+       
+        #btnGo { background-color: rgb(17, 180, 17); }
+        #btnReady { background-color: rgb(160, 124, 35); }
+        #btnStop { background-color: rgb(59, 6, 6); }
+
+        
+        #btnGo:hover { background-color: rgb(14, 110, 14); }
+        #btnReady:hover { background-color: yellow; color: black; }
+        #btnStop:hover { background-color: red; }
+    </style>
+</head>
+<body>
+
+<div class="traffic-light">
+    <div id="red" class="light"></div>
+    <div id="yellow" class="light"></div>
+    <div id="green" class="light"></div>
+</div>
+
+<div class="button-container">
+    <button id="btnGo" class="button" onclick="changeLight('green')">Go</button>
+    <button id="btnReady" class="button" onclick="changeLight('yellow')">Ready</button>
+    <button id="btnStop" class="button" onclick="changeLight('red')">Stop</button>
+</div>
+
+<script>
+    function changeLight(color) {
+        
+        document.getElementById("red").style.backgroundColor = "darkred";
+        document.getElementById("yellow").style.backgroundColor = "goldenrod";
+        document.getElementById("green").style.backgroundColor = "green";
+
+       
+        if (color === "green") {
+            document.getElementById("green").style.backgroundColor = "#39FF14";
+        } else if (color === "yellow") {
+            document.getElementById("yellow").style.backgroundColor = "yellow";
+        } else if (color === "red") {
+            document.getElementById("red").style.backgroundColor = "red";
+        }
+    }
+</script>
+
+</body>
+</html>
